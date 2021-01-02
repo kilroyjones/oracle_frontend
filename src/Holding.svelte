@@ -4,37 +4,54 @@
 </script>
 
 <style>
+  .tile-style {
+    border-radius: 6px;
+    background-color: #f95700ff;
+    color: #eee;
+    padding: 8px;
+    width: 500px;
+  }
+  .price-heading {
+    font-size: 18px;
+    color: #eee;
+  }
   .gain {
-    font-size: 26px;
     font-weight: 700;
-    color: green;
+    color: #c9ffe7;
   }
   .loss {
     font-size: 12px;
     font-weight: 700;
-    color: red;
+    color: #ffbfc7;
   }
-  .current-price {
-    font-size: 14px;
-  }
-  .purchase-price {
-    font-size: 12px;
+  .tile-title {
+    font-size: 26px;
+    color: #eee;
   }
 </style>
 
-<div class="tile tile-centered">
+<!-- <div class="mb-1 tile tile-centered tile-style">
   <div class="tile-content">
-    <div class="tile-title">{holding.ticker}</div>
-    <small class="tile-subtitle text-gray">Purchased:
-      {holding.date_active}</small>
+    <div class="text-bold tile-title">{holding.ticker}</div>
   </div>
   <div class="tile-action">
-    <div class="current-price text-right">{holding.current_price}</div>
-    <div class="purchase-price text-right">{holding.purchased_price}</div>
+    <div class="price-heading text-bold text-right">Purchased</div>
+    <div class="text-right text-bold">{holding.purchased_price}</div>
   </div>
-  {#if { gain } < 0.0}
-    <div class="pl-2 loss tile-action">{gain}</div>
-  {:else}
-    <div class="pl-2 gain tile-action">{gain}</div>
-  {/if}
-</div>
+  <div class="pl-2 tile-action">
+    <div class="price-heading text-bold text-right">Current</div>
+    <div class="text-right text-bold">{holding.purchased_price}</div>
+  </div>
+  <div class="pl-2 pr-2 tile-action" />
+
+  <div class="pl-2 tile-action">
+    <div class="price-heading text-bold text-right">Gain</div>
+    <div class="text-right text-bold">
+      {#if { gain } < 0.0}
+        <div class="pl-2 loss tile-action">{gain}</div>
+      {:else}
+        <div class="pl-2 gain tile-action">{gain}</div>
+      {/if}
+    </div>
+  </div>
+</div> -->

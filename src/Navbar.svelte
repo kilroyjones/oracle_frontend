@@ -1,9 +1,14 @@
 <style>
-  .n-color {
-    background-color: lightgoldenrodyellow;
-  }
-  .navbar-style {
+  .navbar {
     margin-bottom: 4em;
+    background-color: #2d1152;
+  }
+  .navbar-brand {
+    margin-left: 20px;
+    color: #eee;
+  }
+  .btn-link {
+    color: #eee;
   }
 </style>
 

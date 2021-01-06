@@ -34,15 +34,14 @@
     padding: 0px !important;
     height: auto;
   }
-  /* img {
-    opacity: 0;
-    transition: opacity 0.5s;
+  .news-container {
+    background-color: black;
+    padding: 0px;
   }
-  .visible {
-    opacity: 1;
-  } */
 </style>
 
-<div class="container">
-  <NewsCard image={news[imageIndex].image} title={news[imageIndex].text} />
+<div class="columns">
+  <div class="container">
+    <NewsCard image={news[imageIndex].image} title={news[imageIndex].text} />
+  </div>
 </div>

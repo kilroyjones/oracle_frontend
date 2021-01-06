@@ -1,57 +1,56 @@
 <script>
   export let holding;
-  let gain = holding.current_price - holding.purchased_price;
+  let gain = (
+    parseFloat(holding.current_price) -
+    parseFloat(holding.purchased_price - Math.random())
+  ).toFixed(2);
+  let percentage = (gain / parseFloat(holding.purchased_price)).toFixed(2);
 </script>
 
 <style>
-  .tile-style {
-    border-radius: 6px;
-    background-color: #f95700ff;
-    color: #eee;
-    padding: 8px;
-    width: 500px;
+  #ticker {
+    width: 35%;
+    min-width: 70px;
+    color: #0f69ff;
+    font-weight: bold;
   }
-  .price-heading {
-    font-size: 18px;
-    color: #eee;
+  #price {
+    width: 20%;
+    min-width: 50px;
+    font-weight: bold;
+    text-align: right;
   }
-  .gain {
-    font-weight: 700;
-    color: #c9ffe7;
+  #change {
+    width: 20%;
+    min-width: 50px;
+    text-align: right;
   }
-  .loss {
+  #percentage {
+    width: 20%;
+    min-width: 50px;
+    text-align: right;
+  }
+  #name {
+    font-size: 10px;
+    color: #888;
+    margin-top: 1px;
+  }
+  #separator {
+    border-bottom: 1px solid #eee;
     font-size: 12px;
-    font-weight: 700;
-    color: #ffbfc7;
+    margin-bottom: 6px;
   }
-  .tile-title {
-    font-size: 26px;
-    color: #eee;
+  .columns {
+    font-size: 14px;
   }
 </style>
 
-<!-- <div class="mb-1 tile tile-centered tile-style">
-  <div class="tile-content">
-    <div class="text-bold tile-title">{holding.ticker}</div>
-  </div>
-  <div class="tile-action">
-    <div class="price-heading text-bold text-right">Purchased</div>
-    <div class="text-right text-bold">{holding.purchased_price}</div>
-  </div>
-  <div class="pl-2 tile-action">
-    <div class="price-heading text-bold text-right">Current</div>
-    <div class="text-right text-bold">{holding.purchased_price}</div>
-  </div>
-  <div class="pl-2 pr-2 tile-action" />
-
-  <div class="pl-2 tile-action">
-    <div class="price-heading text-bold text-right">Gain</div>
-    <div class="text-right text-bold">
-      {#if { gain } < 0.0}
-        <div class="pl-2 loss tile-action">{gain}</div>
-      {:else}
-        <div class="pl-2 gain tile-action">{gain}</div>
-      {/if}
-    </div>
-  </div>
-</div> -->
+<div class="columns">
+  <div id="ticker">{holding.ticker}</div>
+  <div id="price">{holding.current_price}</div>
+  <div id="change">{gain}</div>
+  <div id="percentage">{percentage}</div>
+</div>
+<div id="separator" class="columns mb-2">
+  <div id="name">{holding.name}</div>
+</div>
